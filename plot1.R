@@ -4,6 +4,7 @@ plot1 <- function(filename, startDate = "2007-02-01", endDate = "2007-02-02") {
     end <- as.Date(endDate);
     
     dataSubset <- subset(data, as.Date(Date, format = "%d/%m/%Y") >= start & as.Date(Date, format = "%d/%m/%Y") <= end);
+    rm(data);
     
     title  <- "Global Active Power";
     xLabel <- "Global Active Power (kilowatts)";
@@ -11,7 +12,7 @@ plot1 <- function(filename, startDate = "2007-02-01", endDate = "2007-02-02") {
     
     par(mar = c(4,4,2,2));
     
-    png("plot1.png",  width = 480, height = 480, units = "px");
     hist(dataSubset$Global_active_power, col = "red", xlab = xLabel, ylab = yLabel, main = title);
+    dev.copy(png, file="plot1.png", width = 480, height = 480)
     dev.off();
 }
