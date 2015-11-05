@@ -12,8 +12,8 @@ plot1 <- function(filename, startDate = "2007-02-01", endDate = "2007-02-02") {
     ## Remove the full data buffer
     rm(data);
     
-    ## Fix margins
-    par(mar = c(4,4,2,2));
+    ## Setup columns,rows and margins
+    par(mfrow = c(1,1), mar = c(4,4,1,1));
     
     ## Create histogram
     hist(dataSubset$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power");

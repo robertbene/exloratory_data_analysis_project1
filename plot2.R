@@ -16,8 +16,8 @@ plot2 <- function(filename, startDate = "2007-02-01", endDate = "2007-02-02") {
     datetime <- paste(as.Date(dataSubset$Date, format = "%d/%m/%Y"), dataSubset$Time);
     datetimePos <- as.POSIXct(datetime);
     
-    ## Fix margins
-    par(mar = c(4,4,2,2));
+    ## Setup columns,rows and margins
+    par(mfrow = c(1,1), mar = c(4,4,1,1));
     
     ## Create plot (type = line)
     plot(dataSubset$Global_active_power~datetimePos, type="l", ylab="Global Active Power (kilowatts)", xlab="");
