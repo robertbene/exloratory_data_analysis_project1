@@ -19,11 +19,11 @@ plot3 <- function(filename, startDate = "2007-02-01", endDate = "2007-02-02") {
     ## Setup columns,rows and margins
     par(mfrow = c(1,1), mar = c(4,4,1,1));
     
-    ## Create plot (type = line)
+    ## Create plot
     with(dataSubset, {
-        plot(Sub_metering_1~datetimePos, type="l",  ylab="Energy sub metering", xlab="")
-        lines(Sub_metering_2~datetimePos,col='red')
-        lines(Sub_metering_3~datetimePos,col='blue')
+        plot(Sub_metering_1~datetimePos, type="l",  ylab="Energy sub metering", xlab="");
+        lines(Sub_metering_2~datetimePos,col='red');
+        lines(Sub_metering_3~datetimePos,col='blue');
     });
     
     ## Add legend

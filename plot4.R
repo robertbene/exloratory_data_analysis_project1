@@ -21,21 +21,21 @@ plot4 <- function(filename, startDate = "2007-02-01", endDate = "2007-02-02") {
     
     with(dataSubset, {
         ## Plot the global active power
-        plot(Global_active_power~datetimePos, type="l", ylab="Global active power (kilowatts)", xlab="")
+        plot(Global_active_power~datetimePos, type="l", ylab="Global active power (kilowatts)", xlab="");
         
         ## Plot the voltage
-        plot(Voltage~datetimePos, type="l", ylab="Voltage", xlab="datetime")
+        plot(Voltage~datetimePos, type="l", ylab="Voltage", xlab="datetime");
         
         ## Plot energy sub metering
-        plot(Sub_metering_1~datetimePos, type="l",  ylab="Energy sub metering", xlab="")
-        lines(Sub_metering_2~datetimePos,col='red')
-        lines(Sub_metering_3~datetimePos,col='blue')
+        plot(Sub_metering_1~datetimePos, type="l",  ylab="Energy sub metering", xlab="");
+        lines(Sub_metering_2~datetimePos,col='red');
+        lines(Sub_metering_3~datetimePos,col='blue');
         
         ## Add legend
-        legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), pch="-", bty = "n")
+        legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), pch="-", bty = "n");
         
         ## Plot the global reactive power
-        plot(Global_reactive_power~datetimePos, type="l", ylab="Global reactive power", xlab="datetime")
+        plot(Global_reactive_power~datetimePos, type="l", ylab="Global reactive power", xlab="datetime");
     });
     
     ## Copy to PNG file
